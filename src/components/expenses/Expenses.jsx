@@ -10,7 +10,7 @@ const Expenses = ({ expenses }) => {
   };
   const filteredItems = expenses.filter((elem) => {
     const stringifiedYear = new Date(elem.date).getFullYear().toString();
-    return stringifiedYear == selectedYear;
+    return stringifiedYear === selectedYear;
   });
   return (
     <ul className="ul-list">
