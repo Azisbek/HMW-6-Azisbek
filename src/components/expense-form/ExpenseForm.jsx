@@ -1,7 +1,22 @@
 import React, { useState } from "react";
 import Button from "../../UI/button/Button";
 import FormInput from "../../UI/formInput/FormInput";
-import "./ExpenseForm.css";
+import styled from "styled-components";
+
+const FormStyle = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const ButtonDiv = styled.div`
+  margin-top: 2rem;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  margin-left: 120px;
+`;
 
 const ExpenseForm = (props) => {
   const [title, setTitle] = useState("");
@@ -38,7 +53,7 @@ const ExpenseForm = (props) => {
   };
 
   return (
-    <form className="form">
+    <FormStyle>
       <FormInput
         id="name"
         labelName="Название"
@@ -65,11 +80,11 @@ const ExpenseForm = (props) => {
         value={date}
         onChange={dateInputChangeHandler}
       />
-      <div className="button_div">
+      <ButtonDiv>
         <Button title="Отмена" onClick={cancelHandler} />
         <Button title="Сохранить" onClick={saveHandler} disabled={!enabled} />
-      </div>
-    </form>
+      </ButtonDiv>
+    </FormStyle>
   );
 };
 

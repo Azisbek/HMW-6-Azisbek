@@ -1,55 +1,67 @@
 import React from "react";
 import ChartBar from "./ChartBar";
-import "./Chart.css";
+import styled from "styled-components";
+
+const DivChart = styled.div`
+  margin-top: 90px;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #f8dfff;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  height: 10rem;
+`;
+
 const Chart = ({ items }) => {
   const maximumPrice = 2000;
   const month = [
     {
-      label: "Jenuary",
+      label: "Январь",
       currentPrice: 0,
     },
     {
-      label: "February",
+      label: "Февраль",
       currentPrice: 0,
     },
     {
-      label: "March",
+      label: "Март",
       currentPrice: 0,
     },
     {
-      label: "April",
+      label: "Апрель",
       currentPrice: 0,
     },
     {
-      label: "May",
+      label: "Май",
       currentPrice: 0,
     },
     {
-      label: "Jun",
+      label: "Июнь",
       currentPrice: 0,
     },
     {
-      label: "Julay",
+      label: "Июль",
       currentPrice: 0,
     },
     {
-      label: "Augest",
+      label: "Август",
       currentPrice: 0,
     },
     {
-      label: "September",
+      label: "Сентябрь",
       currentPrice: 0,
     },
     {
-      label: "October",
+      label: "Октябрь",
       currentPrice: 0,
     },
     {
-      label: "November",
+      label: "Ноябрь",
       currentPrice: 0,
     },
     {
-      label: "December",
+      label: "Декабрь",
       currentPrice: 0,
     },
   ];
@@ -58,7 +70,7 @@ const Chart = ({ items }) => {
     month[mothNumber].currentPrice += item.price;
   });
   return (
-    <div className="chart">
+    <DivChart>
       {month.map((item) => {
         return (
           <ChartBar
@@ -69,7 +81,7 @@ const Chart = ({ items }) => {
           />
         );
       })}
-    </div>
+    </DivChart>
   );
 };
 
